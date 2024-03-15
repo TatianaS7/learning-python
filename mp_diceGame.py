@@ -1,0 +1,34 @@
+# Multiplayer Dice Game
+# Uses random module, functions, and input
+
+import random
+
+def roll_dice():
+    dice_total = random.randint(1, 6) + random.randint(1, 6)
+    return dice_total
+
+def main():
+    player1 = input("Enter player 1's name:\n")
+    player2 = input("Enter player 2's name:\n")
+
+    roll1 = roll_dice()
+    roll2 = roll_dice()
+
+    print(player1, 'rolled', roll1)
+    print(player2, 'rolled', roll2)
+
+    if roll1 > roll2:
+        print(player1, 'won!')
+    elif roll1 < roll2:
+        print(player2, 'won!')
+    else:
+        print('Tie!')
+    
+    rematch = input('Play Again? (y/n)\n')  
+
+    if rematch.lower() == 'y':
+        main()
+
+
+main()
+
